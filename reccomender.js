@@ -40,4 +40,7 @@ async function getData() {
     return bikeData
 }
 
-
+module.exports = {
+    filterBikes,
+    getData,
+}

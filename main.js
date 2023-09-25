@@ -1,16 +1,14 @@
 const prompt = require("prompt-sync")()
+const { getData } = require('./reccomender.js')
+const { filterBikes } = require('./reccomender.js')
 
 
 async function main(){
     const priceInpt = parseInt(prompt("What is your price range: "))
-    console.log(`I like your ${priceInpt} price`)
-    
     const typeInpt = prompt("What is your desired bike type: ")
-    console.log(`I like your ${typeInpt} type`)
-    
     const brandInpt = prompt("What is your desired bike brand: ")
-    console.log(`I like your ${brandInpt} brand`)
-
+   
+    console.log('--searching for matching bikes--')
 
     const bikeData = await getData();
     const matchingBikes = filterBikes(bikeData)
@@ -30,6 +28,8 @@ async function main(){
 
 
 }
+
+main()
 
 console.log('ride like thunder')
 
